@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Clubs and Events</title>
+    <style>
+        /* Reset and Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(48, 35, 100); /* Background color matching image */
+            color: white;
+            background-image: url('/admin/adminimg/WhatsApp\ Image\ 2024-08-05\ at\ 14.58.19.jpeg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh; /* Allow the body to expand beyond the viewport height */
+            margin: 0; /* Ensure no margin around body */
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: #24144a;
+            width: 100%;
+            position: absolute;
+            top: 0;
+        }
+
+        .logo img {
+            width: 80px; /* Increased size */
+            height: 80px; /* Set height to match width */
+            border-radius: 50%; /* Make circular */
+            border: 3px solid white; /* Add border for visibility */
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin: 0 15px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background-color: #3a2d6b; /* Shaded background color on hover */
+            color: #ffa500; /* Text color on hover */
+        }
+
+        .profile-icon img {
+            width: 80px; /* Adjust the size as needed */
+            height: 80px; /* Make sure height matches width */
+            border-radius: 50%; /* Makes the image circular */
+            border: 3px solid white; /* Optional: Add a border for better visibility */
+            object-fit: cover; /* Ensures the image fits within the circle */
+        }
+
+        .profile-details {
+            display: none; /* Initially hidden */
+            position: absolute;
+            top: 70px;
+            right: 0;
+            background-color: #24144a;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            width: 200px;
+        }
+
+        .profile-details p, .profile-details button {
+            margin: 5px 0;
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+
+        .profile-details button {
+            background-color: #3a2d6b;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .profile-details button:hover {
+            background-color: #5a4d7a;
+        }
+
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 100px 20px;
+            width: 100%;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            margin-top: 80px;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end; /* Align the image to the bottom */
+            padding: 40px 0; 
+            position: relative;
+            background: linear-gradient(
+                to bottom,
+                rgba(48, 35, 100, 0) 0%,
+                rgba(48, 35, 100, 1) 100%
+            ); /* Gradual transition to blend */
+        }
+
+        .hero-image img {
+            width: 100%; /* Ensure the image covers the width */
+            max-height: 50vh; /* Limit the height to half the viewport */
+            object-fit: cover; /* Maintain aspect ratio */
+        }
+
+        .container {
+            width: 60%;
+            background: rgb(48, 35, 100); /* Matching the background color */
+            padding: 20px;
+            border-radius: 80px;
+            box-shadow: 0 0 10px rgba(255, 254, 254, 0.3); /* Slightly darker shadow for better contrast */
+            color: white; /* White text for better readability */
+            text-align: center; /* Center content */
+            position: relative;
+            margin: 20px 0; /* Add margin to separate from other elements */
+            
+        }
+
+        .add-event-btn {
+            margin-top: 20px;
+            padding: 15px 25px;
+            background-color: #7c56dc; /* Darker purple for the button */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 1.1rem; /* Slightly larger text */
+        }
+
+        .add-event-btn:hover {
+            background-color: orange; /* Lighter shade on hover */
+        }
+
+        .container h2 {
+            margin-bottom: 20px;
+            color: #ffa500; /* Light orange for headings */
+        }
+
+        .container p {
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <img src="/images/DAYANANDA_SAGAR_UNIVERSITY-LOGO_(1)[1].png" alt="University Logo"> <!-- Placeholder for logo -->
+        </div>
+        <ul class="nav-links">
+            <li><a href="homepage.html">Home</a></li>
+            <li><a href="Clubevents.html">Events</a></li>
+            <li><a href="#">Clubs</a></li>
+            <li><a href="#">News</a></li>
+        </ul>
+        <div class="profile-icon">
+            <img src="<%= user.profileImage %>" alt="Profile Icon">
+            <div class="profile-details" id="profile-details">
+                <p><%= user.clubName %></p>
+                <p><%= user.email %></p>
+                
+                <div id="user-events" style="display:none;">
+                    <% user.events.forEach(function(event) { %>
+                        <p onclick="showEvent('<%= event.id %>')"><%= event.name %></p>
+                    <% }); %>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <h1>Welcome to the Club Admin Dashboard</h1>
+        <p>Manage clubs and events efficiently.</p>
+    </div>
+
+    <div class="container">
+        <h2>Add a New Event</h2>
+        <p>Use the button below to add a new event to the system.</p>
+        <button class="add-event-btn" onclick= 'AddEvent()'>Add Event</button>
+    </div>
+
+    <script>
+        const profileIcon = document.querySelector('.profile-icon');
+        const profileDetails = document.querySelector('.profile-details');
+
+        profileIcon.addEventListener('click', () => {
+            profileDetails.style.display = profileDetails.style.display === 'none' ? 'block' : 'none';
+        });
+        
+    function AddEvent(eventId) {
+        window.location.href = `Addevent.html`;
+    }
+
+       
+    </script>
+
+</body>
+</html>
