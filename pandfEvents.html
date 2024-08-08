@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club Details</title>
+    <link rel="stylesheet" href="pandfEventsstyles.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <a href="homepage.html"><img src="/images/DAYANANDA_SAGAR_UNIVERSITY-LOGO_(1)[1].png" alt="University Logo"></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="homepage.html">Home</a></li>
+                <li><a href="Clubevents.html">Events</a></li>
+                <li><a href="#">Clubs</a></li>
+                <li><a href="#">News</a></li>
+            </ul>
+            <div class="profile-icon" id="profileIcon">
+                <img id="profileImage" src="" alt="Profile"> <!-- src will be filled by JS -->
+                <div class="profile-details" id="profileDetails">
+                    <h3 id="clubName"></h3>
+                    <p id="clubEmail"></p>
+                    <p id="clubDescription"></p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="events">
+            <h1>My Events</h1>
+            <h2>Upcoming Events</h2>
+            <ul id="upcoming-events-list"></ul>
+            
+            
+
+            <h2>Past Events</h2>
+            <ul id="past-events-list"></ul>
+        </section>
+    </main>
+
+    <script src="pandfEventsScript.js"></script>
+</body>
+</html>
+
+
+<!-- the events to be displayed from the database -->

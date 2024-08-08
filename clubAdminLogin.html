@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club Admin Login</title>
+    <link rel="stylesheet" href="clubAdminLoginStyles.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <a href="Blankhomepage.html"><img src="/images/DAYANANDA_SAGAR_UNIVERSITY-LOGO_(1)[1].png" alt="University Logo"></a>
+            </div>
+            
+        </div>
+    </header>
+
+    <main>
+        <section class="login-form">
+            <h1>Club Admin Login</h1>
+            <form id="clubLoginForm">
+                <div class="form-group">
+                    <label for="clubEmail">Club Email</label>
+                    <input type="email" id="clubEmail" name="clubEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="clubPassword">Password</label>
+                    <input type="password" id="clubPassword" name="clubPassword" required>
+                </div>
+                <button type="submit" class="login-btn">Login</button>
+            </form>
+            <div class="register-link">
+                <p>Haven't registered your club yet? <a href="registerClub.html">Register Here</a></p>
+            </div>
+        </section>
+    </main>
+
+    <script src="clubAdminLoginScript.js"></script>
+</body>
+</html>
