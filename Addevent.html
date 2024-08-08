@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Details Form</title>
+    <link rel="stylesheet" href="AddeventStyles.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                
+                <a href="homepage.html"><img src="/images/DAYANANDA_SAGAR_UNIVERSITY-LOGO_(1)[1].png" alt="University Logo"></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="homepage.html">Home</a></li>
+                <li><a href="Clubevents.html">Events</a></li>
+                <li><a href="#">Clubs</a></li>
+                <li><a href="#">News</a></li>
+            </ul>
+            <div class="profile-icon">
+                <img src="<%= user.profileImage %>" alt="Profile Icon">
+                <div class="profile-details" id="profile-details">
+                    <p><%= user.clubName %></p>
+                    <p><%= user.email %></p>
+                    <button id="view-events-btn">My Events</button>
+                    <div id="user-events" style="display:none;">
+                        <% user.events.forEach(function(event) { %>
+                            <p onclick="showEvent('<%= event.id %>')"><%= event.name %></p>
+                        <% }); %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="form-container">
+        <h1>Event Details Form</h1>
+        <form id="eventForm">
+            <label for="clubName">Club Name:</label>
+            <input type="text" id="clubName" name="clubName" required placeholder="Eg: The Echoes Of Lumiere"> 
+
+            <label for="eventName">Event Name:</label>
+            <input type="text" id="eventName" name="eventName" required placeholder="Film making wwokrshop">
+
+            <label for="eventDate">Event Date:</label>
+            <input type="date" id="eventDate" name="eventDate" required>
+
+            <label for="eventTime">Event Time:</label>
+            <input type="time" id="eventTime" name="eventTime" required>
+
+            <label for="eventVenue">Event Venue:</label>
+            <input type="text" id="eventVenue" name="eventVenue" required placeholder="Eg: LH 104">
+
+            <label for="acknowledgedDoc">Acknowledged Document:</label>
+            <input type="file" id="acknowledgedDoc" name="acknowledgedDoc" accept=".pdf,.doc,.docx" required>
+
+            <label for="eventDescription">Event Description:</label>
+            <textarea id="eventDescription" name="eventDescription" rows="5" maxlength="100" required placeholder="A short and simple Description about the event"></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script src="Addevent.html"></script>
+</body>
+</html>

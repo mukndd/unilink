@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Hub - Home</title>
+    <link rel="stylesheet" href="Blankhomestyles.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <a href="Blankhomepage.html"><img src="/images/DAYANANDA_SAGAR_UNIVERSITY-LOGO_(1)[1].png" alt="University Logo"></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#" id="loginLink">Login</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Welcome to the University Hub</h1>
+                <p>Your gateway to all university clubs and events</p>
+                <p>Discover, Engage, Achieve</p>
+            </div>
+
+            <!-- Slideshow Section -->
+            <div class="slideshow-container">
+                <div class="slide fade">
+                    <img src="/admin/adminimg/Screenshot 2024-08-08 at 3.07.58 PM.png" alt="Cultural Event 1">
+                </div>
+                <div class="slide fade">
+                    <img src="/admin/adminimg/Screenshot 2024-08-08 at 3.02.59 PM.png" alt="Cultural Event 2">
+                </div>
+                <div class="slide fade">
+                    <img src="/admin/adminimg/Screenshot 2024-08-08 at 3.03.35 PM.png" alt="Cultural Event 3">
+                </div>
+                <div class="slide fade">
+                    <img src="/admin/adminimg/Screenshot 2024-08-08 at 3.03.57 PM.png" alt="Cultural Event 4">
+                </div>
+            </div>
+
+            <!-- Dots/Indicators -->
+            <div class="dots">
+                <span class="dot" onclick="currentSlide(1)"></span> 
+                <span class="dot" onclick="currentSlide(2)"></span> 
+                <span class="dot" onclick="currentSlide(3)"></span> 
+                <span class="dot" onclick="currentSlide(4)"></span> 
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-buttons">
+                <button id="studentLogin">Student Login</button>
+                <button id="clubLogin">Club Login</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="Blankhomescript.js"></script>
+</body>
+</html>

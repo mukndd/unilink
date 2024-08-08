@@ -1,0 +1,135 @@
+/* General Reset and Layout Fixes */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(48, 35, 100); /* Match background color */
+    color: white;
+    background-image: url('/admin/adminimg/WhatsApp\ Image\ 2024-08-05\ at\ 14.58.19.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Navigation Bar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #24144a;
+    position: fixed; /* Fixed positioning */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Ensure it stays above other content */
+}
+
+.logo img {
+    width: 80px; /* Adjust size as needed */
+    height: 80px; /* Adjust size as needed */
+    border-radius: 50%; /* Circular logo */
+    border: 3px solid white; /* Border for visibility */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: #3a2d6b; /* Darker shade on hover */
+    color: #ffa500; /* Lighter text color on hover */
+}
+
+.profile-icon {
+    position: relative; /* For positioning profile details */
+}
+
+.profile-icon img {
+    width: 80px; /* Adjust size as needed */
+    height: 80px; /* Adjust size as needed */
+    border-radius: 50%; /* Circular profile image */
+    border: 3px solid white; /* Border for visibility */
+    object-fit: cover; /* Ensure image fits well */
+}
+
+.profile-details {
+    display: none; /* Initially hidden */
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background-color: #24144a;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    width: 200px;
+}
+
+.profile-details p {
+    margin: 5px 0;
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
+/* Container Styles */
+.container {
+    width: 50%; /* Adjust width as needed */
+    margin: 20px auto; /* Center container */
+    background: rgb(48, 35, 100); /* Matching background color */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 254, 254, 0.3); /* Slightly darker shadow */
+}
+
+
+body {
+    padding-top: 200px; 
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between form elements */
+}
+
+label {
+    font-weight: bold;
+}
+
+input, textarea, button {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+button {
+    background-color: #7c56dc; /* Button color */
+    color: white;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: orange; /* Button hover color */
+}

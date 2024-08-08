@@ -1,0 +1,55 @@
+<!-- written wrt to EJS syntax -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Hub</title>
+    <link rel="stylesheet" href="homestyles.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                
+                <a href="homepage.html"><img src="/images/DAYANANDA_SAGAR_UNIVERSITY-LOGO_(1)[1].png" alt="University Logo"></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="homepage.html">Home</a></li>
+                <li><a href="Clubevents.html">Events</a></li>
+                <li><a href="#">Clubs</a></li>
+                <li><a href="#">News</a></li>
+            </ul>
+            <div class="profile-icon">
+                <img src="<%= user.profileImage %>" alt="Profile Icon">
+                <div class="profile-details" id="profile-details">
+                    <p><%= user.clubName %></p>
+                    <p><%= user.email %></p>
+                    <button id="view-events-btn">My Events</button>
+                    <div id="user-events" style="display:none;">
+                        <% user.events.forEach(function(event) { %>
+                            <p onclick="showEvent('<%= event.id %>')"><%= event.name %></p>
+                        <% }); %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>One stop hub for Events, Clubs, and Achievements.</h1>
+                <p>Empowering students, one update at a time</p>
+                <p>Discover, Engage, Achieve</p>
+            </div>
+            <!-- <div class="hero-image">
+                <img src="/images/Screenshot 2024-08-03 at 12.02.21 PM.png" alt="University Building">
+            </div> -->
+        </section>
+    </main>
+
+    <script src="homescript.js"></script>
+</body>
+</html>
+
